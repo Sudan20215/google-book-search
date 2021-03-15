@@ -36,5 +36,5 @@ MongoClient.connect(url, { useUnifiedTopology: true })
 
 
 app.listen(PORT, () => {
-  console.log(`Running server now on port ${PORT}!`);
+  console.log(`Listening to http://localhost:${PORT}`);
 });
