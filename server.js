@@ -25,8 +25,8 @@ const PORT = process.env.PORT || 3001;
 app.use(cors())
 app.use(routes);
 
-// Connect to the Mongo DB
-const url = process.env.URL ||'mongodb://localhost:googlebooks';
+// Connect to the Mongo DB database
+const url = process.env.MONGOBD_URI ||'mongodb://localhost:googlebooks';
 MongoClient.connect(url, { useUnifiedTopology: true })
   .then(client => {
    console.log('Connected to Database');
