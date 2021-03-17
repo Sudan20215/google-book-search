@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 const MongoClient = require('mongodb').MongoClient;
 
-mongoose.connect(process.env.MONGODB.URI || "mongodb://localhost/googlebooks", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });
