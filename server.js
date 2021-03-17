@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 const MongoClient = require('mongodb').MongoClient;
 
-mongoose.connect(process.env.URL || "mongodb://localhost/googlebooks", {
+mongoose.connect(process.env.MONGODB.URI || "mongodb://localhost/googlebooks", {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });
@@ -26,7 +26,7 @@ app.use(cors())
 app.use(routes);
 
 // Connect to the Mongo DB database
-const url = process.env.MONGOBD_URI ||'mongodb://localhost:googlebooks';
+const url = process.env.MONGODB_URI ||'mongodb://localhost:googlebooks';
 MongoClient.connect(url, { useUnifiedTopology: true })
   .then(client => {
    console.log('Connected to Database');
